@@ -1,0 +1,136 @@
+/* Gaya khusus halaman login agar berada di tengah layar dan responsif */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    margin: 0;
+    font-family: inherit;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 440px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.login-card {
+    background: var(--card-bg, #ffffff);
+    border-radius: var(--radius-main, 16px);
+    padding: 35px 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color, #e2e8f0);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.login-header .logo-area {
+    width: 70px;
+    height: 70px;
+    background: rgba(30, 58, 138, 0.1);
+    color: var(--primary-color, #2563eb);
+    font-size: 2.2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px auto;
+}
+
+.login-header h1 {
+    font-size: 1.45rem;
+    color: var(--primary-color, #1e3a8a);
+    font-weight: 700;
+    margin: 0 0 6px 0;
+}
+
+.login-header p {
+    font-size: 0.9rem;
+    color: var(--text-muted, #64748b);
+    margin: 0;
+}
+
+/* Memperbaiki lebar input form agar konsisten penuh */
+.login-card .form-group {
+    margin-bottom: 20px;
+}
+
+.login-card .form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 6px;
+}
+
+.login-card .form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border-color, #cbd5e1);
+    border-radius: var(--radius-sm, 8px);
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: #f8fafc;
+}
+
+.login-card .form-group input:focus {
+    border-color: var(--primary-color, #2563eb);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.error-msg {
+    background-color: #fee2e2;
+    color: #dc2626;
+    padding: 10px 14px;
+    border-radius: var(--radius-sm, 8px);
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    display: none;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #fecaca;
+}
+
+.btn-login {
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary-color, #1e3a8a), var(--accent-color, #2563eb));
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: var(--radius-sm, 8px);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s;
+    margin-top: 6px;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-login:hover {
+    opacity: 0.92;
+}
+
+.btn-login:active {
+    transform: scale(0.98);
+}
+
+/* Responsif untuk layar HP kecil */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 12px;
+    }
+    .login-card {
+        padding: 25px 20px;
+    }
+    .login-header h1 {
+        font-size: 1.25rem;
+    }
+}
