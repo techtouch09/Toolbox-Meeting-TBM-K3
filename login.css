@@ -1,0 +1,187 @@
+:root {
+    --primary-color: #0f172a;       
+    --accent-color: #0284c7;        
+    --accent-gradient: linear-gradient(135deg, #0284c7, #2563eb);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: rgba(255, 255, 255, 0.12);
+    --radius-main: 24px;
+    --radius-sm: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Latar belakang dengan nuansa industri keselamatan yang dalam & mewah */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: radial-gradient(circle at top right, #1e3a8a, #0f172a 70%);
+    padding: 20px;
+    color: var(--text-main);
+}
+
+.login-container {
+    width: 100%;
+    max-width: 440px;
+}
+
+/* Mengubah kotak putih menjadi kaca buram (Glassmorphism) yang elegan */
+.login-card {
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: var(--radius-main);
+    padding: 40px 32px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.login-header .logo-area {
+    width: 72px;
+    height: 72px;
+    background: rgba(2, 132, 199, 0.15);
+    color: #38bdf8;
+    font-size: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px auto;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    box-shadow: 0 0 20px rgba(2, 132, 199, 0.2);
+}
+
+.login-header h1 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin: 0 c 6px 0;
+    letter-spacing: -0.01em;
+}
+
+.login-header p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* Form Group */
+.login-card .form-group {
+    margin-bottom: 20px;
+}
+
+.login-card .form-group label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-bottom: 8px;
+}
+
+/* Input bergaya gelap elegan yang kontras saat diketik */
+.login-card .form-group input {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.25s ease;
+    background-color: rgba(30, 41, 59, 0.6);
+    color: #ffffff;
+}
+
+.login-card .form-group input::placeholder {
+    color: #64748b;
+}
+
+.login-card .form-group input:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.login-card .form-group input:focus {
+    border-color: #38bdf8;
+    background-color: rgba(30, 41, 59, 0.9);
+    box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.25);
+}
+
+.error-msg {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+    padding: 11px 14px;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    display: none;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    font-weight: 500;
+}
+
+.btn-login {
+    width: 100%;
+    background: var(--accent-gradient);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s, box-shadow 0.2s;
+    margin-top: 8px;
+    box-shadow: 0 4px 20px rgba(2, 132, 199, 0.4);
+}
+
+.btn-login:hover {
+    opacity: 0.95;
+    box-shadow: 0 6px 25px rgba(2, 132, 199, 0.6);
+}
+
+.btn-login:active {
+    transform: scale(0.98);
+}
+
+/* Footer teks kecil di bawah kartu */
+.login-card .login-footer-text, 
+.login-card div[style*="text-align: center"],
+.login-card p:not(.login-header p) {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsif untuk layar HP kecil */
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+    .login-card {
+        padding: 28px 20px;
+        border-radius: 18px;
+    }
+    .login-header h1 {
+        font-size: 1.3rem;
+    }
+    .login-header .logo-area {
+        width: 60px;
+        height: 60px;
+        font-size: 1.6rem;
+    }
+}
